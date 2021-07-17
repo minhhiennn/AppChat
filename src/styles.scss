@@ -3,4 +3,13 @@ body{
     margin:0;
     padding:30px;
 }
+h1, h2, h3, h4, h5, h6, p, a, span {
+  font-family: 'Helvetica Neue LT Std';
+}
+//remove css a tag
+a {
+  color: #0060B6;
+  text-decoration: none;
+}
+
 
