@@ -15,19 +15,19 @@
       </div>
     </div>
     <div class="main-task-bar" id="main-task-bar">
-      <div class="main-task-bar-home active" #home (click)="changeTask(home)">
+      <div class="main-task-bar-home" #home (click)="changeTask(home)" [routerLink]="['/home']">
         <i class="fa fas fa-home fa-2x"></i>
       </div>
-      <div class="main-task-bar-chat" #chat (click)="changeTask(chat)">
+      <div class="main-task-bar-chat active" #chat (click)="changeTask(chat)" [routerLink]="['/chat']">
         <i class="fa fas fa-comment fa-2x"></i>
       </div>
-      <div class="main-task-bar-friends" #friends (click)="changeTask(friends)">
+      <div class="main-task-bar-friends" #friends (click)="changeTask(friends)" [routerLink]="['/friendlist']">
         <i class="fa fas fa-users fa-2x"></i>
       </div>
       <div class="main-task-bar-trash" #trash (click)="changeTask(trash)">
         <i class="fa fas fa-trash fa-2x"></i>
       </div>
-      <div class="main-task-bar-setting" #setting (click)="changeTask(setting)">
+      <div class="main-task-bar-setting" #setting (click)="changeTask(setting)" [routerLink]="['/setting']">
         <i class="fa fas fa-cogs fa-2x"></i>
       </div>
     </div>
