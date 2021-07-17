@@ -1,0 +1,112 @@
+.taskbar {
+  display: block;
+  height: 100%;
+  width: 100px;
+  border-radius: 12px 0 0 12px;
+  background-color: #101a30;
+
+  .container {
+    border-radius: 12px 0 0 0;
+    width: 100%;
+    height: 85%;
+    background-color: #1c253d;
+
+    .container-header {
+      text-align: center;
+      padding-top: 8px;
+
+      .dot {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+    }
+
+    .under-container-header {
+      height: 38px;
+      padding-top: 30px;
+
+      .class-1 {
+        text-align: center;
+        height: 100%;
+        position: relative;
+
+        span {
+          background-color: #f3f7f8;
+          position: absolute;
+        }
+
+        .dot-width {
+          height: 8px;
+          width: 30px;
+          border-radius: 30px;
+          display: inline-block;
+          top: 15px;
+        }
+
+        .dot {
+          height: 8px;
+          width: 8px;
+          border-radius: 50%;
+          display: inline-block;
+        }
+      }
+    }
+
+    .main-task-bar {
+      text-align: center;
+      height: auto;
+      padding-top: 20px;
+
+      i {
+        cursor: pointer;
+        color: #848c9e;
+      }
+
+      div {
+        padding: 20px;
+      }
+
+      .main-task-bar-home {
+      }
+
+      .main-task-bar-chat {
+      }
+
+      .main-task-bar-friends {
+      }
+
+      .main-task-bar-trash {
+      }
+
+      .main-task-bar-setting {
+      }
+
+      i:hover {
+        text-shadow: 3px 0px 7px rgba(81,67,21,0.8), -3px 0px 7px rgba(81,67,21,0.8), 0px 4px 7px rgba(81,67,21,0.8);
+      }
+
+      .active {
+        i {
+          text-shadow: 3px 0px 7px rgba(81,67,21,0.8), -3px 0px 7px rgba(81,67,21,0.8), 0px 4px 7px rgba(81,67,21,0.8);
+          color: #CFC547;
+        }
+      }
+    }
+  }
+
+  .footer {
+    height: 15%;
+
+    .go-right {
+      i {
+        cursor: pointer;
+        padding: 5px 10px 5px 10px;
+        margin: 28px 0 0 35px;
+        border-radius: 50%;
+        background-color: #252533;
+      }
+    }
+  }
+}

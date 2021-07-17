@@ -1,0 +1,40 @@
+<div class="taskbar">
+  <div class="container">
+    <div class="container-header">
+      <span class="dot" style="background:#fe5e54"></span>
+      <span class="dot" style="background:#fcbe0f;margin:0 15px 0 15px;"></span>
+      <span class="dot" style="background:#14cc35"></span>
+    </div>
+    <div class="under-container-header">
+      <div class="class-1">
+        <span class="dot-width" style="top:5px;left:22px"></span>
+        <span class="dot" style="top:5px;right:30px"></span>
+        <span class="dot-width" style="top:16px"></span>
+        <span class="dot" style="top:16px;left:35px;"></span>
+        <span class="dot-width" style="left:38px;top:29px"></span>
+      </div>
+    </div>
+    <div class="main-task-bar" id="main-task-bar">
+      <div class="main-task-bar-home active" #home (click)="changeTask(home)">
+        <i class="fa fas fa-home fa-2x"></i>
+      </div>
+      <div class="main-task-bar-chat" #chat (click)="changeTask(chat)">
+        <i class="fa fas fa-comment fa-2x"></i>
+      </div>
+      <div class="main-task-bar-friends" #friends (click)="changeTask(friends)">
+        <i class="fa fas fa-users fa-2x"></i>
+      </div>
+      <div class="main-task-bar-trash" #trash (click)="changeTask(trash)">
+        <i class="fa fas fa-trash fa-2x"></i>
+      </div>
+      <div class="main-task-bar-setting" #setting (click)="changeTask(setting)">
+        <i class="fa fas fa-cogs fa-2x"></i>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="go-right">
+      <i class="fa fas fa-angle-right fa-lg" style="color:white"></i>
+    </div>
+  </div>
+</div>
