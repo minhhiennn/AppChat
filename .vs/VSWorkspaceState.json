@@ -4,8 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\Component",
-    "\\src\\app\\Component\\taskbar"
+    "\\src\\app\\Component\\chat",
+    "\\src\\app\\Component\\friendlist",
+    "\\src\\app\\Component\\home",
+    "\\src\\app\\Component\\setting",
+    "\\src\\app\\Component\\taskbar",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\Component\\taskbar\\taskbar.component.ts",
+  "SelectedNode": "\\src\\styles.scss",
   "PreviewInSolutionExplorer": false
 }
