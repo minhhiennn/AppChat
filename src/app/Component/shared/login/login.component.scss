@@ -1,0 +1,77 @@
+.container {
+  width: 500px;
+  height: 350px;
+  margin: 80px auto 0 auto;
+  position: relative;
+  border: 1px solid white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+  .login-form-header {
+    border: 1px solid #5c1769;
+    display: block;
+    padding-left: 15px;
+    background-color: #5c1769;
+
+    h2 {
+      display: block;
+      color: white;
+    }
+  }
+
+  .login-form-body {
+    background: #de5bff;
+    height: 280px;
+    display: block;
+
+    .username {
+      padding: 45px 0px 20px 90px;
+      position: relative;
+
+      input {
+        padding: 10px;
+        width: 310px;
+        border-radius: 8px;
+        border: 2px solid #c9ccd1;
+      }
+
+      i {
+        position: absolute;
+        bottom: 31px;
+        right: 90px;
+      }
+    }
+
+    .password {
+      padding: 5px 0px 20px 90px;
+      position: relative;
+
+      input {
+        padding: 10px;
+        width: 310px;
+        border-radius: 8px;
+        border: 2px solid #c9ccd1;
+      }
+
+      i {
+        position: absolute;
+        bottom: 31px;
+        right: 90px;
+      }
+    }
+
+    .sign-in {
+      padding: 20px 0px 20px 15px;
+      text-align: center;
+
+      button {
+        padding: 10px 30px 10px 30px;
+        border-radius: 8px;
+        border: none;
+        background-color: #5c1769;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}

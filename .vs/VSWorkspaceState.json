@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\Component",
-    "\\src\\app\\Component\\chat",
     "\\src\\app\\Component\\friendlist",
     "\\src\\app\\Component\\home",
     "\\src\\app\\Component\\setting",
-    "\\src\\app\\Component\\taskbar",
-    "\\src\\assets"
+    "\\src\\app\\Component\\shared",
+    "\\src\\app\\Component\\shared\\login",
+    "\\src\\app\\Service"
   ],
-  "SelectedNode": "\\src\\styles.scss",
+  "SelectedNode": "\\src\\app\\Component\\shared\\login\\login.component.ts",
   "PreviewInSolutionExplorer": false
 }
