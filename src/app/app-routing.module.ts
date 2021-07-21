@@ -12,7 +12,7 @@ import { TaskbarComponent } from './Component/taskbar/taskbar.component';
 import { ChatbodyComponent } from './Component/chat/chatbody/chatbody.component';
 
 const routes: Routes = [
-  { path: 'chat', component: ChatComponent },
+  { path: 'chat/:id', component: ChatComponent },
   { path: 'home', component: HomeComponent },
   { path: 'friendlist', component: FriendlistComponent },
   { path: 'setting', component: SettingComponent },
