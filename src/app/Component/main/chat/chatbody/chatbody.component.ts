@@ -15,10 +15,13 @@ export class ChatbodyComponent implements OnInit {
   public iconalt: string[]=["😁","😆","😅","😍"];
   public icons  : Icons[] = [];
   public    isShowIcon: boolean = false;
-  constructor(private route: ActivatedRoute, private friendlistService: FriendlistService, private websocketservice: WebsocketService) { }
+  constructor(private route: ActivatedRoute, private friendlistService: FriendlistService, private websocketservice: WebsocketService) { 
+  
+  }
 
   ngOnInit(): void {
     this.createIcons();
+
     this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
       this.friendlistService.getFriendWithID(id).subscribe((data: Friend) => {
@@ -26,8 +29,11 @@ export class ChatbodyComponent implements OnInit {
         localStorage.setItem('friendName', this.friend.username);
       });
     })
+   
+   
   }
   sendMessage(ele: HTMLInputElement) {
+    let img= document.getElementById("iconsend") as HTMLImageElement ;
     let x = document.getElementsByClassName('content-left-body')[0];
     let length = x.getElementsByClassName('main-body').length;
     if (length > 0) {
@@ -80,7 +86,8 @@ export class ChatbodyComponent implements OnInit {
         x.appendChild(q);
       }
       this.websocketservice.sendChatToServer(this.friend.username, ele.value);
-      ele.value = '';
+     ele.value = '';
+      img.src="/assets/image/like3.png";
     } else {
       let q = document.createElement('div');
       q.classList.add('main-body');
@@ -107,7 +114,8 @@ export class ChatbodyComponent implements OnInit {
       q2.appendChild(q3);
       q.appendChild(q1);
       x.appendChild(q);
-    }    
+    } 
+   
   }
   addIcon(indexIcon: string|number): void {
    
@@ -142,4 +150,17 @@ hideOrUnhideIcon():void {
 hiden(){
   this.isShowIcon=false;
 }
+changeicon():void{
+  
+  
+  let sendicon= document.getElementById("sendMessage") as HTMLInputElement; 
+    let img= document.getElementById("iconsend") as HTMLImageElement ; 
+   if(sendicon.value!=""){
+  img.src="/assets/image/send.png";
+   }else{
+      img.src="/assets/image/like3.png"
+   }
+ 
+  }
+
 }

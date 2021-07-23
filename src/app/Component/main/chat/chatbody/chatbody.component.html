@@ -19,8 +19,13 @@
   </div>
   <div class="content-left-footer">
     <div class="send-message-input">
-      <input type="text" placeholder="Aa" #mess (keyup.enter)="sendMessage(mess)" id="sendMessage" (click)="hiden()" editor/>
+      <input type="text" placeholder="Aa" #mess (keyup.enter)="sendMessage(mess)" id="sendMessage" (click)="hiden()" (keyup)="changeicon()" editor/>
       <div  class="icon" (click)="hideOrUnhideIcon()">  <img src="assets/image/icon.png" /></div>
+      <img id="iconsend"  alt="sen"  style="margin-left: 580px;margin-bottom: 15px;"
+      #mess (click)="sendMessage(mess)"
+     src="assets/image/like3.png"
+      />
+
     </div>
   </div>
   <div *ngIf="this.isShowIcon">
