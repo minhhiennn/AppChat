@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { FriendlistService } from 'src/app/Service/friendlist.service';
 import { Friend } from '../../../../Model/friend';
 import { WebsocketService } from 'src/app/Service/websocket.service';
+import { Icons } from 'src/app/Model/icons';
+
 @Component({
   selector: 'app-chatbody',
   templateUrl: './chatbody.component.html',
@@ -10,9 +12,13 @@ import { WebsocketService } from 'src/app/Service/websocket.service';
 })
 export class ChatbodyComponent implements OnInit {
   friend: any;
+  public iconalt: string[]=["😁","😆","😅","😍"];
+  public icons  : Icons[] = [];
+  public    isShowIcon: boolean = false;
   constructor(private route: ActivatedRoute, private friendlistService: FriendlistService, private websocketservice: WebsocketService) { }
 
   ngOnInit(): void {
+    this.createIcons();
     this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
       this.friendlistService.getFriendWithID(id).subscribe((data: Friend) => {
@@ -103,4 +109,37 @@ export class ChatbodyComponent implements OnInit {
       x.appendChild(q);
     }    
   }
+  addIcon(indexIcon: string|number): void {
+   
+    let x= document.getElementById("sendMessage") as HTMLInputElement;
+    let img= document.getElementById("img") as HTMLImageElement ;
+    for (let i = 0; i < this.icons.length; i++){
+   
+     
+      if(i==indexIcon){
+      img.alt=this.iconalt[i];
+    }
+
+  }
+  console.log(img.alt);
+  x.value +=img.alt;
+}
+createIcons(): void {
+   
+  for (let i = 0; i <= 3; i++) {
+    
+
+    this.icons.push(new Icons(`assets/image/1f60${i}.png`,this.iconalt[i]));
+  
+  }
+  console.log(this.icons);
+
+}
+hideOrUnhideIcon():void {
+  this.isShowIcon = !this.isShowIcon;
+  console.log(this.isShowIcon);
+}
+hiden(){
+  this.isShowIcon=false;
+}
 }

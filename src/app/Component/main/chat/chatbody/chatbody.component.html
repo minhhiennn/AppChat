@@ -14,13 +14,38 @@
       </div>
     </div>
   </div>
-  <div class="content-left-body">
+  <div class="content-left-body" (click)="hiden()">
 
   </div>
   <div class="content-left-footer">
     <div class="send-message-input">
-      <input type="text" placeholder="Aa" #mess (keyup.enter)="sendMessage(mess)"/>
-      <i class="fas fa-smile"></i>
+      <input type="text" placeholder="Aa" #mess (keyup.enter)="sendMessage(mess)" id="sendMessage" (click)="hiden()" editor/>
+      <div  class="icon" (click)="hideOrUnhideIcon()">  <img src="assets/image/icon.png" /></div>
     </div>
+  </div>
+  <div *ngIf="this.isShowIcon">
+    <div class="uiScrollableAreaBody"  >
+      <div class="uiScrollableArea">
+        <h3 style="color: #717a88;">mặt cười & hình người</h3>
+        <div class="_3vgi" style="min-height:2200px">
+          <div class="clearfix" >
+<span class   >
+<div class="_5zfs" role="button" tabindex="0"  >
+<img alt="{{icon.ALT}}" style="margin-left: 5px;" class="_5zft img" id="img" draggable="false" height="28" width="28" *ngFor="let icon of icons; index as idx" (click)="addIcon(idx)"
+src="{{icon.src}}"   >
+
+</div>
+
+</span>  
+
+          </div>
+
+
+        </div>
+      </div>
+     
+    </div>
+    <div class="arrow-down" ></div>
+  
   </div>
 </div>
