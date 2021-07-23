@@ -1,0 +1,26 @@
+<div class="content-left" id="main" *ngIf="friend">
+  <div class="content-left-header">
+    <div class="image">
+      <img src="assets/image/linkka.jpg" />
+      <span class="dot-white"></span>
+      <span class="dot-green"></span>
+    </div>
+    <div class="information">
+      <div class="name">
+        <span>{{friend.username}}</span>
+      </div>
+      <div class="status">
+        <span style="font-family: 'Times New Roman', Times, serif">Đang hoạt động</span>
+      </div>
+    </div>
+  </div>
+  <div class="content-left-body">
+
+  </div>
+  <div class="content-left-footer">
+    <div class="send-message-input">
+      <input type="text" placeholder="Aa" #mess (keyup.enter)="sendMessage(mess)"/>
+      <i class="fas fa-smile"></i>
+    </div>
+  </div>
+</div>

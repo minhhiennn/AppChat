@@ -8,7 +8,6 @@ export class UserService {
   constructor() { }
   setCurrentUser(user: User) {
     localStorage.setItem("currentUser", JSON.stringify(user));
-
   }
   getCurrentUser(): User | null {
     let object: any = localStorage.getItem("currentUser");

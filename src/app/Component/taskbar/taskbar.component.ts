@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-taskbar',
   templateUrl: './taskbar.component.html',
@@ -7,12 +6,26 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class TaskbarComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-    let x: string = this.router.url;
-    let stringSplit = x.split('/');
-    let y = document.getElementById(stringSplit[1]) as HTMLElement;
-    y.classList.add('active');
+
+  }
+  changeTask(ele: HTMLElement) {
+    this.removeActive();
+    this.addActive(ele);
+  }
+  removeActive() {
+    let x: HTMLElement = document.getElementById('main-task-bar') as HTMLElement;
+    let child: HTMLCollection = x.getElementsByTagName('div');
+    for (let i in child) {
+      if (child[i].classList.contains('active')) {
+        child[i].classList.remove('active');
+        break;
+      }
+    }
+  }
+  addActive(ele: HTMLElement) {
+    ele.classList.add('active');
   }
 }

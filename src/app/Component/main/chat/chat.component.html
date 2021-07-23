@@ -1,5 +1,4 @@
-<div style="display:flex">
-  <app-taskbar></app-taskbar>
+
   <div class="chat-component">
     <div class="header-chat">
       <h2>Messages</h2>
@@ -31,7 +30,7 @@
           <i class="fa fas fa-search"></i>
         </div>
         <div class="list-friends">
-          <div class="friend-information" *ngFor="let friend of listFriend;index as i" [class.active]="isActive(friend.id)" (click)="changeRoute(friend.id)">
+          <div class="friend-information" *ngFor="let friend of listFriend;index as i" [class.active]="isActive(friend.id)" (click)="changeRoute(friend.id)" id="{{friend.username}}">
             <div class="image">
               <img src="assets/image/linkka.jpg" style="width:40px;height:40px" />
               <div class="online">
@@ -55,7 +54,7 @@
           </div>
         </div>
       </div>
-      <app-chatbody></app-chatbody>
+      <router-outlet></router-outlet>
     </div>
   </div>
-</div>
+

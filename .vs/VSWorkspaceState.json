@@ -3,12 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\Component",
-    "\\src\\app\\Component\\chat",
-    "\\src\\app\\Component\\friendlist",
-    "\\src\\app\\Model",
-    "\\src\\app\\Service"
+    "\\src\\app\\Component\\main",
+    "\\src\\app\\Component\\taskbar"
   ],
-  "SelectedNode": "\\src\\app\\Service\\websocket.service.ts",
+  "SelectedNode": "\\src\\app\\Component",
   "PreviewInSolutionExplorer": false
 }
