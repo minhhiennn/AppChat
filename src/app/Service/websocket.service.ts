@@ -133,7 +133,7 @@ export class WebsocketService {
         "event": "SEND_CHAT",
         "data": {
           "type": "people",
-          "to": "teo",
+          "to": "long",
           "mes": mess
         }
       }
