@@ -135,20 +135,73 @@
       input {
         border-radius: 20px;
         height: 25px;
-        width: 500px;
+        width: 550px;
         padding: 5px 5px 5px 10px;
         line-height: normal;
         border: none;
         background-color: #f3f3f5;
       }
 
-      i {
-        color: #0099ff;
-        position: absolute;
+      .icon {
+        width: 20px;
+        height: 20px;
+        border-radius:100%;
+    
         bottom: 8px;
         left: 518px;
-        cursor: pointer;
+        margin-left: 10px;
+        margin-top: -20px;
+       position: relative;
+        background-color:#0099ff ;
+        cursor:pointer;
+        img{
+          width: 20px;
+          height: 20px;
+         
+         
+         
+        }
       }
     }
   }
+}
+.uiScrollableAreaBody{
+  width: 320px;
+  height: 280px;
+  border: 1px solid #717a88;
+  border-radius: 20px;
+  animation: fadeIn 1s ease-in;
+  margin-top: -280px;
+  margin-left: 240px;
+  position: absolute;
+
+  
+  
+  
+  ._5zfs{
+    float: left;
+    margin-left: 5px;
+   
+    
+  
+  }
+  ._5zft:hover{
+    background-color: #d7dbe2;
+    cursor:pointer;
+  
+  
+  }
+ 
+}
+.arrow-down {
+  width: 2px; 
+  height: 2px; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  margin-left: 535px;
+  margin-top: -70px;
+  transform: rotate(-15deg);
+  border-top: 20px solid #eee;
+  
+  
 }
