@@ -148,7 +148,6 @@ export class WebsocketService {
                 a.appendChild(z);
               }
             } else {
-              console.log('ahihi');
               let m = document.getElementById(w) as HTMLElement;
               let n = m.getElementsByClassName('information')[0].getElementsByClassName('message')[0];
               let b = n.getElementsByTagName('span')[0];

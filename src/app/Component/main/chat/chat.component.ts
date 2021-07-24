@@ -30,15 +30,12 @@ export class ChatComponent implements OnInit {
       return false;
     }
   }
-  changeRoute(id: number) {
-    let x = document.getElementsByClassName('message');
-    for (let i = 0; i < x.length; i++) {
-      let y = x[i].getElementsByTagName('span')[0];
-      y.style.color = '#97989a';
-    }
-    this.idNumberActive = id;
+  changeRoute(friend: Friend) {
+    let x = document.getElementById(friend.username)?.getElementsByClassName('information')[0].getElementsByClassName('message')[0].getElementsByTagName('span')[0] as HTMLElement;
+    x.style.color = '#97989a';
+    this.idNumberActive = friend.id;
     this.router.navigateByUrl('/main/chat', { skipLocationChange: true }).then(() =>
-      this.router.navigate(['main/chat', id]));
+      this.router.navigate(['main/chat', friend.id]));
     //this.router.navigate(['main/chat', id]);
   }
 }

@@ -30,7 +30,7 @@
           <i class="fa fas fa-search"></i>
         </div>
         <div class="list-friends">
-          <div class="friend-information" *ngFor="let friend of listFriend;index as i" [class.active]="isActive(friend.id)" (click)="changeRoute(friend.id)" id="{{friend.username}}">
+          <div class="friend-information" *ngFor="let friend of listFriend;index as i" [class.active]="isActive(friend.id)" (click)="changeRoute(friend)" id="{{friend.username}}">
             <div class="image">
               <img src="assets/image/linkka.jpg" style="width:40px;height:40px" />
               <div class="online">

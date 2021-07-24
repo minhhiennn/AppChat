@@ -3,9 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\Component",
     "\\src\\app\\Component\\main",
-    "\\src\\app\\Component\\taskbar"
+    "\\src\\app\\Component\\main\\chat",
+    "\\src\\app\\Component\\main\\chat\\chatbody",
+    "\\src\\app\\Service"
   ],
-  "SelectedNode": "\\src\\app\\Component",
+  "SelectedNode": "\\src\\app\\Component\\main\\chat\\chatbody\\chatbody.component.ts",
   "PreviewInSolutionExplorer": false
 }
