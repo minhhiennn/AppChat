@@ -115,7 +115,8 @@ export class ChatbodyComponent implements OnInit {
       q.appendChild(q1);
       x.appendChild(q);
     } 
-   
+    ele.value = '';
+    img.src="/assets/image/like3.png";
   }
   addIcon(indexIcon: string|number): void {
    
