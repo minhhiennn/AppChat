@@ -30,7 +30,7 @@
           <i class="fa fas fa-search"></i>
         </div>
         <div class="list-friends">
-          <div class="friend-information" *ngFor="let friend of listFriend;index as i" [class.active]="isActive(friend.id)" (click)="changeRoute(friend)" id="{{friend.username}}">
+          <div class="friend-information" *ngFor="let chat of listChat;index as i" [class.active]="isActive(chat.id)" (click)="changeRoute(chat)" id="{{chat.username}}">
             <div class="image">
               <img src="assets/image/linkka.jpg" style="width:40px;height:40px" />
               <div class="online">
@@ -41,7 +41,7 @@
             <div class="information">
               <div class="name-time">
                 <div class="name">
-                  <span>{{friend.username}}</span>
+                  <span>{{chat.username}}</span>
                 </div>
                 <div class="time">
                   <span>2 giờ</span>

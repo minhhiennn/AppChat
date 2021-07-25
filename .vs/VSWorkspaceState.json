@@ -7,8 +7,9 @@
     "\\src\\app\\Component\\main",
     "\\src\\app\\Component\\main\\chat",
     "\\src\\app\\Component\\main\\chat\\chatbody",
+    "\\src\\app\\Model",
     "\\src\\app\\Service"
   ],
-  "SelectedNode": "\\src\\app\\Component\\main\\chat\\chatbody\\chatbody.component.ts",
+  "SelectedNode": "\\src\\app\\Service\\websocket.service.ts",
   "PreviewInSolutionExplorer": false
 }

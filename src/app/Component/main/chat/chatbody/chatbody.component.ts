@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FriendlistService } from 'src/app/Service/friendlist.service';
-import { Friend } from '../../../../Model/friend';
+import { ListChatService } from 'src/app/Service/listchat.service';
+import { listChat } from 'src/app/Model/listchat';
 import { WebsocketService } from 'src/app/Service/websocket.service';
 import { Icons } from 'src/app/Model/icons';
 
@@ -15,21 +15,18 @@ export class ChatbodyComponent implements OnInit {
   public iconalt: string[] = ["😁", "😆", "😅", "😍"];
   public icons: Icons[] = [];
   public isShowIcon: boolean = false;
-  constructor(private route: ActivatedRoute, private friendlistService: FriendlistService, private websocketservice: WebsocketService) {
+  constructor(private route: ActivatedRoute, private friendlistService: ListChatService, private websocketservice: WebsocketService) {
 
   }
-
   ngOnInit(): void {
     this.createIcons();
     this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
-      this.friendlistService.getFriendWithID(id).subscribe((data: Friend) => {
+      this.friendlistService.getFriendWithID(id).subscribe((data: listChat) => {
         this.friend = data;
         localStorage.setItem('friendName', this.friend.username);
       });
     })
-
-
   }
   sendMessage(ele: HTMLInputElement) {
     let img = document.getElementById("iconsend") as HTMLImageElement;
@@ -111,21 +108,21 @@ export class ChatbodyComponent implements OnInit {
       q.appendChild(q1);
       x.appendChild(q);
     }
-    this.websocketservice.sendChatToServer(this.friend.username, ele.value);
+    if (this.friend.type == "people") {
+      this.websocketservice.sendChatToPeople(this.friend.username, ele.value);
+    } else if (this.friend.type == "room") {
+      this.websocketservice.sendChatToRoom(this.friend.username, ele.value);
+    }
     ele.value = '';
     img.src = "/assets/image/like3.png";
   }
   addIcon(indexIcon: string | number): void {
-
     let x = document.getElementById("sendMessage") as HTMLInputElement;
     let img = document.getElementById("img") as HTMLImageElement;
     for (let i = 0; i < this.icons.length; i++) {
-
-
       if (i == indexIcon) {
         img.alt = this.iconalt[i];
       }
-
     }
     console.log(img.alt);
     x.value += img.alt;
@@ -149,7 +146,5 @@ export class ChatbodyComponent implements OnInit {
     } else {
       img.src = "/assets/image/like3.png"
     }
-
   }
-
 }
