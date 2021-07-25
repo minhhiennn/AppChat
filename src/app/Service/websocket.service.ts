@@ -197,7 +197,11 @@ export class WebsocketService {
                   this.createContentChatForRoomChat(x,w1,t);
                 }
               } else {
-                console.log('ahuhu');
+                let m = document.getElementById(w) as HTMLElement;
+                let n = m.getElementsByClassName('information')[0].getElementsByClassName('message')[0];
+                let b = n.getElementsByTagName('span')[0];
+                b.innerHTML = w1 + ": " + t;
+                b.style.color = '#141414';
               }
             }
             break;
