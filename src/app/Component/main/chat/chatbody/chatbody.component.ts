@@ -23,8 +23,12 @@ export class ChatbodyComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
       this.friendlistService.getFriendWithID(id).subscribe((data: listChat) => {
+        console.log('ahihi');
         this.friend = data;
         localStorage.setItem('friendName', this.friend.username);
+        setTimeout(() => {
+          this.websocketservice.getHistoryChat(this.friend.username);
+        }, 500);
       });
     })
   }
@@ -38,19 +42,10 @@ export class ChatbodyComponent implements OnInit {
       if (y1.classList.contains('outgoing_group')) {
         let q = document.createElement('div');
         q.classList.add('row');
-        q.style.paddingRight = '10px';
-        q.style.textAlign = 'right';
         let q2 = document.createElement('div');
         q2.classList.add('main-contain');
-        q2.style.display = "inline-block";
-        q2.style.backgroundColor = "#0099ff";
-        q2.style.borderRadius = "18px";
-        q2.style.padding = "5px 12px 5px 12px";
-        q2.style.marginTop = "3px";
         let q3 = document.createElement('span');
         q3.innerHTML = ele.value;
-        q3.style.color = 'white';
-        q3.style.fontFamily = "'Times New Roman', Times, serif";
         q2.appendChild(q3);
         q.appendChild(q2);
         y1.appendChild(q);
@@ -58,24 +53,12 @@ export class ChatbodyComponent implements OnInit {
         let q = document.createElement('div');
         q.classList.add('main-body');
         q.classList.add('outgoing_group');
-        q.style.display = 'flex';
-        q.style.position = 'relative';
-        q.style.display = 'block';
         let q1 = document.createElement('div');
         q1.classList.add('row');
-        q1.style.paddingRight = '10px';
-        q1.style.textAlign = 'right';
         let q2 = document.createElement('div');
         q2.classList.add('main-contain');
-        q2.style.display = "inline-block";
-        q2.style.backgroundColor = "#0099ff";
-        q2.style.borderRadius = "18px";
-        q2.style.padding = "5px 12px 5px 12px";
-        q2.style.marginTop = "3px";
         let q3 = document.createElement('span');
         q3.innerHTML = ele.value;
-        q3.style.color = 'white';
-        q3.style.fontFamily = "'Times New Roman', Times, serif";
         q1.appendChild(q2);
         q2.appendChild(q3);
         q.appendChild(q1);
@@ -85,24 +68,12 @@ export class ChatbodyComponent implements OnInit {
       let q = document.createElement('div');
       q.classList.add('main-body');
       q.classList.add('outgoing_group');
-      q.style.display = 'flex';
-      q.style.position = 'relative';
-      q.style.display = 'block';
       let q1 = document.createElement('div');
       q1.classList.add('row');
-      q1.style.paddingRight = '10px';
-      q1.style.textAlign = 'right';
       let q2 = document.createElement('div');
       q2.classList.add('main-contain');
-      q2.style.display = "inline-block";
-      q2.style.backgroundColor = "#0099ff";
-      q2.style.borderRadius = "18px";
-      q2.style.padding = "5px 12px 5px 12px";
-      q2.style.marginTop = "3px";
       let q3 = document.createElement('span');
       q3.innerHTML = ele.value;
-      q3.style.color = 'white';
-      q3.style.fontFamily = "'Times New Roman', Times, serif";
       q1.appendChild(q2);
       q2.appendChild(q3);
       q.appendChild(q1);
@@ -130,7 +101,7 @@ export class ChatbodyComponent implements OnInit {
   createIcons(): void {
     for (let i = 0; i <= 3; i++) {
       this.icons.push(new Icons(`assets/image/1f60${i}.png`, this.iconalt[i]));
-    }    
+    }
   }
   hideOrUnhideIcon(): void {
     this.isShowIcon = !this.isShowIcon;

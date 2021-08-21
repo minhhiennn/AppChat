@@ -16,6 +16,82 @@ a {
 input:focus {
   outline: none;
 }
+
 ::-webkit-scrollbar {
   display: none;
+}
+
+.content-left-body {
+  height: 368px;
+  overflow-y: hidden;
+  overflow-y: scroll;
+
+  span {
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .main-body {
+    display: flex;
+    position: relative;
+
+    .image {
+      img {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        bottom: 0;
+        left: 2px;
+      }
+    }
+  }
+
+  .incoming_group {
+    width: 100%;
+
+    .content-chat {
+      padding-left: 36px;
+      width: 98%;
+
+      .people-name {
+        padding-left: 10px;
+
+        span {
+          font-size: 14px;
+          color: #65676b;
+        }
+      }
+
+      .row {
+        .main-contain {
+          display: inline-block;
+          background-color: #e4e6eb;
+          border-radius: 18px;
+          padding: 5px 12px 5px 12px;
+          margin-top: 3px;
+        }
+      }
+    }
+  }
+
+  .outgoing_group {
+    display: block;
+
+    .row {
+      padding-right: 10px;
+      text-align: right;
+
+      .main-contain {
+        display: inline-block;
+        background-color: #0099ff;
+        border-radius: 18px;
+        padding: 5px 12px 5px 12px;
+        margin-top: 3px;
+
+        span {
+          color: white;
+        }
+      }
+    }
+  }
 }
