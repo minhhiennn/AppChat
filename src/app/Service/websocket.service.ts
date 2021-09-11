@@ -26,6 +26,7 @@ export class WebsocketService {
     this.ws.next(data);
   }
   LoginToServer(username: string, password: string) {
+    console.log('loz va cac');
     let data = {
       "action": "onchat",
       "data": {
@@ -42,11 +43,13 @@ export class WebsocketService {
   getMessageFromServer() {
     this.ws.subscribe(
       (msg: any) => {
-        let event = Object.values(msg)[1];
+        console.log(msg);
+        let event = Object.values(msg)[2];
         switch (event) {
           case 'LOGIN':
+            console.log('loz');
             let status: string = Object.values(msg)[0] as string;
-            let mes: string = Object.values(msg)[2] as string;
+            let mes: string = Object.values(msg)[1] as string;
             this.checkLogin(status, mes);
             break;
           case 'SEND_CHAT':
